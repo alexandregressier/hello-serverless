@@ -1,6 +1,7 @@
 import type { AWS } from "@serverless/typescript"
 
 import hello from "@functions/hello"
+import greet from "@functions/greet"
 
 const serverlessConfiguration: AWS = {
     service: "hello-serverless",
@@ -21,7 +22,10 @@ const serverlessConfiguration: AWS = {
         region: "eu-west-3",
     },
     // import the function via paths
-    functions: { hello },
+    functions: {
+        hello,
+        greet,
+    },
     package: { individually: true },
     custom: {
         esbuild: {
